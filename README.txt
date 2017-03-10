@@ -2,14 +2,14 @@
 TITLE: 
 ##專業螺旋冷凍修邊機台-建台興工程行
 
-網址:www.snewup.com(http:www.snewup.com)
+網址:www.snewup.com
 
-**營業時間：星期一至星期五早上8:30~下午6:30</p>
-**營業登記證字號：10959803
-**住址:彰化縣彰化市平和里新平路127號</li>
-**公司電話:04-7511517</li>
-**聯絡人電話:0938-390185  黃先生
-**聯絡人信箱:johnbabalingbubu@gmail.com(mailto:johnbabalingbubu@gmail.com)
+**[營業時間]星期一至星期五早上8:30~下午6:30
+**[營業登記證字號]10959803
+**[住址]彰化縣彰化市平和里新平路127號
+**[公司電話]04-7511517
+**[聯絡人電話]0938-390185  黃先生
+**[聯絡人信箱]johnbabalingbubu@gmail.com
 	
 
 Website Tamplate Socurce From
