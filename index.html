@@ -72,7 +72,7 @@
 			<header id="fh5co-header-section" class="header-bg">
 				<div class="container">
 					<div class="nav-header">
-						<a href="index.html" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 						<h1 id="fh5co-logo"><span class="logo"><img src="images/logo.png"></span><a href="index.html">建台興工程行</a></h1>
 						<em style="display:none">專業螺旋輸送設備‧專業冷凍修邊機</em>
 						<!-- START #fh5co-menu-wrap -->
@@ -84,7 +84,7 @@
 								<li>
 									<a href="profolio.html" class="fh5co-sub-ddown">商品總覽</a>
 									<ul class="fh5co-sub-menu">
-									    <li><a href="index.html#fh5co-work-section">冷凍修邊機</a></li>
+									    <li><a href="profolio-view.html">冷凍修邊機</a></li>
 										<li><a href="index.html#fh5co-work-section">等距螺旋，不鏽鋼全焊</a></li>
 										<li><a href="index.html#fh5co-work-section">輸送螺旋</a></li>
 										<li><a href="index.html#fh5co-work-section">螺旋.設計製造.代工</a></li>
@@ -93,7 +93,7 @@
 									</ul>
 								</li>
 										<li><a href="https://docs.google.com/forms/d/18jT9mvxsrHyVDzkemSjD3d0X3TDmjzkPQxJo99uhvm4/viewform?usp=send_form" target="blank">採購詢價</a></li>
-										<li><a href="index.html#fh5co-contact;">聯絡方式</a></li>
+										<li><a href="index.html#fh5co-contact">聯絡方式</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -412,23 +412,51 @@
 
 
 			function sendMail() {
-				console.log('send');
-				var subject = '建台興網頁聯絡表單發送';
-				var formName = '建台興聯絡表單';
-				var body = "";
-				    body += "<div><h3>聯絡人</h3>"+ $('#contact-name').val(); +"</div>";
-				    body += "<div><h3>聯絡信箱</h3>"+ $('#contact-mail').val(); +"</div>";
-				    body += "<div><h3>聯絡手機</h3>"+ $('#contact-phone').val(); +"</div>";
-				    body += "<div>"+ $('#contact-message').val(); +"</div>";
+				// console.log('send');
+				// var subject = '建台興網頁聯絡表單發送';
+				// var formName = '建台興聯絡表單';
+				// var body = "";
+				//     body += "<div><h3>聯絡人</h3>"+ $('#contact-name').val(); +"</div>";
+				//     body += "<div><h3>聯絡信箱</h3>"+ $('#contact-mail').val(); +"</div>";
+				//     body += "<div><h3>聯絡手機</h3>"+ $('#contact-phone').val(); +"</div>";
+				//     body += "<div>"+ $('#contact-message').val(); +"</div>";
 
 
-				var data = [{"title":""+subject+"", "from_name": ""+formName+"","from_mail":"johnbabalingbubu@gmail.com","recipient_name":"建台興網頁管理者","recipient_mail":"lililala0112@gmail.com","content":""+ body +""}]
-			    console.log(data);
+				// var data = [{"title":""+subject+"", "from_name": ""+formName+"","from_mail":"johnbabalingbubu@gmail.com","recipient_name":"建台興網頁管理者","recipient_mail":"lililala0112@gmail.com","content":""+ body +""}]
+			 //    console.log(data);
 
-			    $.post( "http://yomodesign.tw/service/mail.php", {'data':JSON.stringify(data)})
-			      .done(function( resp ) {
-			        console.log( "Data Loaded: " + resp );
-			      });
+			 //    $.post( "http://yomodesign.tw/service/mail.php", {'data':JSON.stringify(data)})
+			 //      .done(function( resp ) {
+			 //        console.log( "Data Loaded: " + resp );
+			 //      });
+
+			 var name =$('#contact-name').val();
+			 var phone = $('#contact-phone').val();
+			 var email = $('#contact-mail').val();
+			 var message = $('#contact-message').val();
+			 $.ajax({
+			        url: "https://docs.google.com/forms/d/e/1FAIpQLSeUiyDEkOkjy5bfLubp0eqY-ULVmya4Abp0-qmWDfrYXWqyPg/formResponse",
+			        data: { 
+			        "entry.2097622607": name, 
+			        "entry.934039893": phone, 
+			        "entry.1011681575": email,
+			        "entry.1974281588": message,
+			         },
+			        type: "POST",
+			        dataType: "xml",
+			        statusCode: {
+			            0: function () {
+			                document.getElementById("message").innerHTML = "Your form has been submitted!";
+			                window.location.replace("ThankYou.html");
+			            },
+			            200: function () {
+			                document.getElementById("message").innerHTML = "Your form has been submitted!";
+			                console.log("Success");
+			                window.location.replace("ThankYou.html");
+			            }
+			        }
+			    });
+			 e.preventDefault();
 	  
 			}
 

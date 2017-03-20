@@ -192,9 +192,8 @@
 	 
 	
 	var addLineFriend = function(){
-			console.log(this);
 			if(detectmob()){
-	            this.href = "http://line.me/ti/p/y5VFDTL-TU";
+	            location.href = "http://line.me/ti/p/y5VFDTL-TU" ;
 			}else{
 				if(! $('#add-linefriend').length){
 					$('body').prepend(addFirendBox());
