@@ -33,6 +33,8 @@
 	<meta property="og:url" content="images/outlook.png"/>
 	<meta property="og:site_name" content="建台興工程行"/>
 	<meta property="og:description" content="冷凍修邊機,螺旋,輸送,螺旋輸送,輸送螺旋,螺旋輸送機,葉片,乾燥,攪拌,混合,絞龍,螺桿"/>
+	<!-- google console -->
+	<meta name="google-site-verification" content="93yOTdgly3lsBCBIBsavarYZVuaJDVcI1TComvQ2X2c" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-16x16.png">
@@ -63,7 +65,25 @@
 	</head>
 	<body>
 
+	<!--module-->
 
+        <div class="modal fade" id="myModal">
+        	<div class="modal-dialog">
+        		<div class="modal-content">
+        			<div class="modal-header">
+        				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        				<h4 class="modal-title">訊息通知</h4>
+        			</div>
+        			<div class="modal-body" id="modal-msg">
+        				
+        			</div>
+        			<div class="modal-footer">
+        				<button type="button" class="btn btn-default" data-dismiss="modal">確定</button>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+     <!--./module-->
 
 
 		<div id="fh5co-wrapper">
@@ -73,7 +93,7 @@
 				<div class="container">
 					<div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-						<h1 id="fh5co-logo"><span class="logo"><img src="images/logo.png"></span><a href="index.html">建台興工程行</a></h1>
+						<h1 id="fh5co-logo"><span class="logo"><img src="images/logo.png" alt="螺旋客製‧專業冷凍修邊機-建台興工程行"></span><a href="index.html">建台興工程行</a></h1>
 						<em style="display:none">專業螺旋輸送設備‧專業冷凍修邊機</em>
 						<!-- START #fh5co-menu-wrap -->
 						<nav id="fh5co-menu-wrap" role="navigation">
@@ -82,7 +102,7 @@
 									<a href="index.html">首頁</a>
 								</li>
 								<li>
-									<a href="profolio.html" class="fh5co-sub-ddown">商品總覽</a>
+									<a href="index.html#fh5co-work-section" class="fh5co-sub-ddown">商品總覽</a>
 									<ul class="fh5co-sub-menu">
 									    <li><a href="profolio-view.html">冷凍修邊機</a></li>
 										<li><a href="index.html#fh5co-work-section">等距螺旋，不鏽鋼全焊</a></li>
@@ -284,23 +304,24 @@
 							
 								<div class="col-md-6">
 									<div class="form-group">
-										<input type="text" class="form-control" name="name" placeholder="聯絡人" id="contact-name">
+										<input type="text" class="form-control" name="name" placeholder="聯絡人(必填)" id="contact-name">
 									</div>
 								</div>
 								
 								<div class="col-md-6">
 									<div class="form-group">
-										<input type="mail" class="form-control" placeholder="手機" id="contact-phone">
+										<input type="mail" class="form-control" placeholder="手機(必填)" id="contact-phone">
 									</div>
 								</div>
 								<div class="col-md-12">
 									<div class="form-group">
 										<input type="mail" class="form-control" placeholder="信箱" id="contact-email">
+
 									</div>
                                 </div>
 								<div class="col-md-12">
 									<div class="form-group">
-										<textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="我要留言" id="contact-message"></textarea>
+										<textarea name="" class="form-control" id="contact-msg" cols="30" rows="7" placeholder="我要留言(必填)" ></textarea>
 									</div>
 								</div>
 								<div class="col-md-12">
@@ -430,33 +451,35 @@
 			 //        console.log( "Data Loaded: " + resp );
 			 //      });
 
-			 var name =$('#contact-name').val();
-			 var phone = $('#contact-phone').val();
-			 var email = $('#contact-mail').val();
-			 var message = $('#contact-message').val();
+             if(  $('#contact-msg').val() == '' || $('#contact-name').val() == '' || $('#contact-phone').val() == ''){
+                 $('#modal-msg').text('送出失敗，聯絡人，手機，留言 不可為空值!!');
+                 $('#myModal').modal('show');
+                 return false;
+             }
+
 			 $.ajax({
 			        url: "https://docs.google.com/forms/d/e/1FAIpQLSeUiyDEkOkjy5bfLubp0eqY-ULVmya4Abp0-qmWDfrYXWqyPg/formResponse",
 			        data: { 
-			        "entry.2097622607": name, 
-			        "entry.934039893": phone, 
-			        "entry.1011681575": email,
-			        "entry.1974281588": message,
+			        "formkey": "1FAIpQLSeUiyDEkOkjy5bfLubp0eqY-ULVmya4Abp0-qmWDfrYXWqyPg",
+			        "entry.1974281588": $('#contact-msg').val(),
+			        "entry.2097622607": $('#contact-name').val(), 
+			        "entry.934039893" : $('#contact-phone').val(), 
+			        "entry.1011681575": $('#contact-email').val()
 			         },
 			        type: "POST",
 			        dataType: "xml",
 			        statusCode: {
 			            0: function () {
-			                document.getElementById("message").innerHTML = "Your form has been submitted!";
-			                window.location.replace("ThankYou.html");
+			               $('#modal-msg').text('已送出，感謝您的填寫，我們會盡快與您連繫，如有久候未聯絡有可能漏信，請來電諮詢');
+			               $('#myModal').modal('show');
 			            },
 			            200: function () {
-			                document.getElementById("message").innerHTML = "Your form has been submitted!";
-			                console.log("Success");
-			                window.location.replace("ThankYou.html");
+			            	 $('#modal-msg').text('已送出，感謝您的填寫，我們會盡快與您連繫，如有久候未聯絡有可能漏信，請來電諮詢');
+			            	 $('#myModal').modal('show');
+			               
 			            }
 			        }
 			    });
-			 e.preventDefault();
 	  
 			}
 

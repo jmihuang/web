@@ -80,7 +80,7 @@ table *{
 #fh5co-header {
   position: relative;
   margin-bottom: 0;
-  z-index: 9999999;
+  z-index: 100;
 }
 #fh5co-header .header-bg{
   background-color: rgba(0,0,0, .8);
@@ -1202,7 +1202,7 @@ table *{
   position:fixed;
   bottom:8em;
   right:8em;
-  z-index:9999;
+  z-index:100;
   background-color:#fff;
   border:solid 1px #ddd;
 }
