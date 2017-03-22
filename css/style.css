@@ -77,6 +77,8 @@ table *{
   background: #FCC72C;
 }
 
+
+
 #fh5co-header {
   position: relative;
   margin-bottom: 0;
@@ -566,6 +568,7 @@ table *{
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   border-radius: 7px;
+  overflow:hidden;
 }
 @media screen and (max-width: 480px) {
   .fh5co-grid {
@@ -647,6 +650,7 @@ table *{
   display: inline-block;
   zoom: 1;
   *display: inline;
+
 }
 #fh5co-services .fh5co-number:before {
   position: absolute;
@@ -1235,3 +1239,11 @@ table *{
       display:block;
     }
   }
+
+.figure-img{
+  position: absolute;
+  max-width:100%;
+  min-width:100%;
+  height:auto;
+  display:block;
+}
