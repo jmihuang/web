@@ -351,11 +351,12 @@
 			            0: function () {
 			               $('#modal-msg').text('已送出，感謝您的填寫，我們會盡快與您連繫，如有久候未聯絡有可能漏信，請來電諮詢');
 			               $('#myModal').modal('show');
+			               $('#contact-msg,#contact-name,#contact-phone,#contact-email').val('');
 			            },
 			            200: function () {
 			            	 $('#modal-msg').text('已送出，感謝您的填寫，我們會盡快與您連繫，如有久候未聯絡有可能漏信，請來電諮詢');
 			            	 $('#myModal').modal('show');
-			               
+			            	 $('#contact-msg,#contact-name,#contact-phone,#contact-email').val('');
 			            }
 			        }
 			    });
