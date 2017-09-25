@@ -77,13 +77,12 @@ table *{
   background: #FCC72C;
 }
 
-
-
 #fh5co-header {
   position: relative;
   margin-bottom: 0;
   z-index: 100;
 }
+
 #fh5co-header .header-bg{
   background-color: rgba(0,0,0, .8);
 }
@@ -171,7 +170,7 @@ table *{
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover {
-    heifght: inherit;
+    height: inherit;
     padding: 3em 0;
   }
 }
@@ -184,7 +183,7 @@ table *{
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover.fh5co-cover_2 {
-    heifght: inherit;
+    height: inherit;
     padding: 3em 0;
   }
 }
@@ -356,6 +355,12 @@ table *{
 .logo{
   margin-right:10px;
 }
+
+.section-title{
+  font-size:24px;
+  line-height:40px;
+}
+
 #fh5co-logo {
   position: relative;
   z-index: 2;
@@ -398,8 +403,7 @@ table *{
 }
 #fh5co-primary-menu > li > .sf-with-ul:after {
   border: none !important;
-  font-family: 'icomoon';
-  speak"Microsoft JhengHei",: none;
+  font-family: 'icomoon',"Microsoft JhengHei";
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -421,8 +425,7 @@ table *{
 }
 #fh5co-primary-menu > li > ul li > .sf-with-ul:after {
   border: none !important;
-  font-family: 'icomoon';
-  speak"Microsoft JhengHei",: none;
+  font-family: 'icomoon',"Microsoft JhengHei";
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -521,7 +524,7 @@ table *{
 #fh5co-content-section,
 #fh5co-work-section_2,
 #fh5co-blog-section {
-  padding: 7em 0;
+  padding: 4em 0;
 }
 @media screen and (max-width: 768px) {
   #fh5co-work-section,
@@ -615,10 +618,6 @@ table *{
 }
 .fh5co-grid:hover .image-popup {
   opacity: 1;
-}
-
-.services {
-  margin-bottom: 5em;
 }
 .services span {
   margin-bottom: 30px;
