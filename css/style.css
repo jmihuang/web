@@ -566,8 +566,6 @@ table *{
 
 .fh5co-grid {
   height: 302px;
-  background-size: cover;
-  background-position: center center;
   margin-bottom: 30px;
   position: relative;
   -webkit-border-radius: 7px;
@@ -576,11 +574,13 @@ table *{
   border-radius: 7px;
   overflow:hidden;
 }
+
 @media screen and (max-width: 480px) {
   .fh5co-grid {
     height: 400px;
   }
 }
+
 .fh5co-grid .image-popup {
   position: absolute;
   top: 0;
@@ -594,6 +594,7 @@ table *{
   -ms-border-radius: 7px;
   border-radius: 7px;
 }
+
 .fh5co-grid .image-popup .prod-title {
   position: absolute;
   top: 50%;
@@ -602,28 +603,34 @@ table *{
   right: 20px;
   margin-top: -25px;
 }
+
 .fh5co-grid .image-popup .prod-title h3 {
   margin-bottom: 10px;
   color: #fff;
   font-size: 20px;
 }
+
 .fh5co-grid .image-popup .prod-title span {
   color: #fff;
 }
+
 .fh5co-grid:hover {
   -webkit-transform: scale(1.05);
   -moz-transform: scale(1.05);
   -o-transform: scale(1.05);
   transform: scale(1.05);
 }
+
 .fh5co-grid:hover .image-popup {
   opacity: 1;
 }
+
 .services span {
   margin-bottom: 30px;
   display: block;
   width: 100%;
 }
+
 .services span i {
   font-size: 50px;
   color: #fcc72c;
@@ -1241,11 +1248,14 @@ table *{
       display:block;
     }
   }
-
+.work-img figure{
+  height:100%;
+  overflow:hidden;
+  text-align: center;
+  border-radius: 7px;
+}
 .figure-img{
-  position: absolute;
-  max-width:100%;
   min-width:100%;
-  height:auto;
-  display:block;
+  max-height:100%;
+  margin:0 -100%;
 }
